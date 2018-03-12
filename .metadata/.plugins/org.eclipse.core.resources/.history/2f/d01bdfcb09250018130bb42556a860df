@@ -1,0 +1,63 @@
+package com.sysmex.hr.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sysmex.hr.model.Employee;
+
+@RestController
+@RefreshScope
+@RequestMapping("/hr")
+public class HRController {
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private Environment environment;
+	
+	@Value("${hr.slogan}")
+	private String slogan;
+	
+	@RequestMapping("")
+	public String getSlogan() {
+		return this.slogan;
+	}
+	
+	@RequestMapping("/fsoftEmployee/{id}")
+	public String getFsoftEmployee(@PathVariable int id) {
+		String html = "<h3>Fsoft Project Detail:</h3>";
+		Employee employee = new Employee(id, "FsoftEmployee" + id, "Fsoft", getActiveProfile());
+		html += "<br/><b>Id:</b>&nbsp;" + project.getId();
+		html += "<br/><b>Name:</b>&nbsp;" + project.getName();
+		html += "<br/><b>Replica:</b>&nbsp;" + project.getReplica();
+		html += "<br/><h3>Spring Project Active Profile: " + getActiveProfile() + "</h3>";
+		return html;
+	}
+	
+	@RequestMapping("/fisEmployee/{id}")
+	public String getFISEmployee(@PathVariable int id) {
+		String html = "<h3>FIS Employ Detail (" + getActiveProfile() + "):</h3>";
+		Employee employee = new Employee(id, "FISEmployee" + id, "FIS", getActiveProfile());
+		html += "<br/><b>Id:</b>&nbsp;" + project.getId();
+		html += "<br/><b>Name:</b>&nbsp;" + project.getName();
+		html += "<br/><b>Replica:</b>&nbsp;" + project.getReplica();
+		html += "<br/><h3>Spring Project Active Profile: " + getActiveProfile() + "</h3>";
+		return html;
+	}
+	
+	private String getActiveProfile() {
+		String profile = "";
+		if (environment.getActiveProfiles().length > 0) {
+			profile = environment.getActiveProfiles()[0];
+		}
+		logger.info("Profile Trip:" + profile);
+		return profile;
+	}
+}

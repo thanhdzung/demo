@@ -1,0 +1,87 @@
+spring:
+  application:
+    name: HR-SERVICE # ==> This is Service-Id
+     
+ 
+---
+# Items that apply to ALL profiles:   
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry}:${eureka.port:9000}/eureka/
+server:
+  port: 6200  
+  
+---
+spring:
+  profiles: hr-service-replica01
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 6201   
+     
+---
+spring:
+  profiles: hr-service-replica02
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/  
+server:
+  port: 6202
+  
+---
+spring:
+  profiles: hr-service-replica03
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/   
+server:
+  port: 6203
+  
+---
+spring:
+  profiles: hr-service-replica04
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/ 
+server:
+  port: 6204  
+  
+---
+spring:
+  profiles: hr-service-replica05
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://my-eureka-server-us.com:9001/eureka    
+server:
+  port: 6205

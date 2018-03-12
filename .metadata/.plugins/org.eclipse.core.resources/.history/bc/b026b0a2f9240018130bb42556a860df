@@ -1,0 +1,94 @@
+spring:
+  application:
+    name: PROJECT-SERVICE # ==> This is Service-Id
+     
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: info, health, refresh, metrics
+      #path-mapping:
+      #  health: healthcheck
+---
+# Items that apply to ALL profiles:   
+eureka:
+  instance:
+    appname: PROJECT-SERVICE  # ==> This is a instance of PROJECT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 6200  
+  
+---
+spring:
+  profiles: hr-service-replica01
+eureka:
+  instance:
+    appname: PROJECT-SERVICE  # ==> This is a instance of PROJECT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 6201   
+     
+---
+spring:
+  profiles: hr-service-replica02
+eureka:
+  instance:
+    appname: PROJECT-SERVICE  # ==> This is a instance of PROJECT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/  
+server:
+  port: 6202
+  
+---
+spring:
+  profiles: hr-service-replica03
+eureka:
+  instance:
+    appname: PROJECT-SERVICE  # ==> This is a instance of PROJECT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/   
+server:
+  port: 6203
+  
+---
+spring:
+  profiles: hr-service-replica04
+eureka:
+  instance:
+    appname: PROJECT-SERVICE  # ==> This is a instance of PROJECT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/ 
+server:
+  port: 6204  
+  
+---
+spring:
+  profiles: hr-service-replica05
+eureka:
+  instance:
+    appname: PROJECT-SERVICE  # ==> This is a instance of PROJECT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/   
+server:
+  port: 6205

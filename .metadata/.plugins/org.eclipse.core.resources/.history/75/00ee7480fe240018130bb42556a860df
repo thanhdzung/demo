@@ -1,0 +1,12 @@
+package com.sysmex.fsoft;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FsoftServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FsoftServiceApplication.class, args);
+	}
+}

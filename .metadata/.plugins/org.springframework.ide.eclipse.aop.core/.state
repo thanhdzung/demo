@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="ZuulServer"/>
+<aop-project name="TurbineStream"/>
+<aop-project name="HystrixDashboard"/>
+<aop-project name="FsoftService"/>
+<aop-project name="FISService"/>
+<aop-project name="EurekaServer"/>
+<aop-project name="ConfigServer"/>
+<aop-project name="HRService"/>
+<aop-project name="ProjectService"/>
+</aop-reference-model>

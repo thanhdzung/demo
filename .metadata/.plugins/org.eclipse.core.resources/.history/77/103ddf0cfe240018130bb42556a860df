@@ -1,0 +1,13 @@
+package com.sysmex.fis.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/fis")
+public class FISController {
+
+	public String hello() {
+		return "Hello FIS!"
+	}
+}

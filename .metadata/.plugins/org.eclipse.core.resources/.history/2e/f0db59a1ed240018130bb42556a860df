@@ -1,0 +1,84 @@
+spring:
+  application:
+    name: HR-SERVICE # ==> This is Service-Id
+     
+ 
+---
+# Items that apply to ALL profiles:   
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+#      defaultZone: http://my-eureka-server.com:9000/eureka
+      defaultZone: http://my-eureka-server-us.com:9001/eureka
+#      defaultZone: http://my-eureka-server-fr.com:9002/eureka
+#      defaultZone: http://my-eureka-server-vn.com:9003/eureka
+server:
+  port: 6200  
+  
+---
+spring:
+  profiles: HR-SERVICE-replica01
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://my-eureka-server-us.com:9001/eureka/  
+server:
+  port: 6201   
+     
+---
+spring:
+  profiles: HR-SERVICE-replica02
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://my-eureka-server-us.com:9001/eureka/   
+server:
+  port: 6202
+  
+---
+spring:
+  profiles: HR-SERVICE-replica03
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://my-eureka-server-us.com:9001/eureka    
+server:
+  port: 6203
+  
+---
+spring:
+  profiles: HR-SERVICE-replica04
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://my-eureka-server-us.com:9001/eureka    
+server:
+  port: 6204  
+  
+---
+spring:
+  profiles: HR-SERVICE-replica05
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://my-eureka-server-us.com:9001/eureka    
+server:
+  port: 6205

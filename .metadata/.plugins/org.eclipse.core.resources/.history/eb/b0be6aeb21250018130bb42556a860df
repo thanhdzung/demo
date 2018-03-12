@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: TURBINE-STREAM
+eureka:
+  instance:
+    appname: HYSTRIX-DASHBOARD
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 8989
+
+turbine:
+  appConfig: FSOFT-SERVICE
+  cluster-name-expression: new String("default")

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: HYSTRIX-DASHBOARD
+
+server:
+  port: 7979

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: HYSTRIX-DASHBOARD
+
+eureka:
+  instance:
+    appname: HR-SERVICE  # ==> This is a instance of HR-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 7979

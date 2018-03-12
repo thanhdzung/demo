@@ -1,0 +1,10 @@
+# Read file on Config-Server:
+# app-about-company.properties or app-about-company.yml
+spring.application.name=HR-SERVICE
+ 
+# This is the default - Bind directly to the config server using the configuration property:
+spring.cloud.config.uri=http://${config.host:config}:${config.port:8888}
+
+#Lookup a config server using the discovery server, Eureka:
+#spring.cloud.config.discovery.enabled: true
+#spring.cloud.config.discovery.serviceId: config-server

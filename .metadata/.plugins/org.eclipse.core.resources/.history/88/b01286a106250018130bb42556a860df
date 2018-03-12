@@ -1,0 +1,39 @@
+package com.sysmex.fsoft.controller;
+
+import java.net.URI;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.sysmex.fsoft.util.Util;
+
+@RestController
+@RequestMapping("/fsoft")
+public class FsoftController {
+
+	@Autowired
+	Util util;
+	
+	@Value("${fsoft.projectServiceId}")
+	private String projectServiceId;
+	
+	private RestTemplate restTemplate = new RestTemplate();
+	
+	@RequestMapping("")
+	public String hello() {
+		return "Hello Fsoft!";
+	}
+	
+	@RequestMapping("/project/{id}")
+	public String getProject(@PathVariable int id) {
+		URI uri = util.getServiceUrl(projectServiceId, "http://localhost:0000/");
+		String url = uri.toString() + "/fsoftProject/" + id;
+		String html = "<h3>Project Detail:</h3>";
+		html += "<br>" + serviceId + "'>" + serviceId + "</a>";
+		return html;
+	}
+}

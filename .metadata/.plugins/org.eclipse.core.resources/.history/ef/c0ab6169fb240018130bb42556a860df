@@ -1,0 +1,12 @@
+package com.sysmex.fis;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FisServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FisServiceApplication.class, args);
+	}
+}

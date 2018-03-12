@@ -1,0 +1,5 @@
+package com.sysmex.hr.controller;
+
+public class HRController {
+
+}

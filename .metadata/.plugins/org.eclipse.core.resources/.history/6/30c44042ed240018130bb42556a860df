@@ -1,0 +1,14 @@
+'@EnableEurekaClient': ''
+'@SpringBootApplication': ''
+SpringApplication:
+  run(HrServiceApplication:
+    class,: args);
+import:
+- org.springframework.boot.SpringApplication;
+- org.springframework.boot.autoconfigure.SpringBootApplication;
+- org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+package: com.sysmex.hr;
+public:
+- class HrServiceApplication {
+- static void main(String[] args) {
+'}': ''

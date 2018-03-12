@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.config.server.EnableConfigServer"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.EnableEurekaClient"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.context.config.annotation.RefreshScope"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.zuul.EnableZuulProxy"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="com.sysmex.edge.filter.RouteFilter"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="com.sysmex.edge.filter.ErrorFilter"/>
+<fullyQualifiedTypeName name="com.sysmex.edge.filter.PreFilter"/>
+<fullyQualifiedTypeName name="org.springframework.web.filter.CommonsRequestLoggingFilter"/>
+<fullyQualifiedTypeName name="com.netflix.servo.monitor.PublishingPolicy"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.config.environment.Environment"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.sysmex.fsoft.util.Util"/>
+<fullyQualifiedTypeName name="java.net.URI"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+<fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.core.env.Environment"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="com.sysmex.fis.util.Util"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="com.sysmex.project.controller.ProjectController"/>
+<fullyQualifiedTypeName name="com.sysmex.project.model.Project"/>
+<fullyQualifiedTypeName name="com.sysmex.hr.model.Employee"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker"/>
+<fullyQualifiedTypeName name="com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.turbine.stream.EnableTurbineStream"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.turbine.EnableTurbine"/>
+</qualifiedTypeNameHistroy>

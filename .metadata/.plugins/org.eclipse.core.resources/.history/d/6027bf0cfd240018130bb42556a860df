@@ -1,0 +1,46 @@
+eureka:
+  client:
+    fetchRegistry: 'true'
+    registerWithEureka: 'true'
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+  instance:
+    preferIpAddress: 'true'
+
+server:
+  port: '6000'
+  
+spring:
+  application:
+    name: zuul-server
+
+# ribbon.eureka.enabled: false
+
+zuul:
+    ignoredServices: "*"
+    prefix: /api
+    routes:
+        fsoft:
+            path: /fsoft/**
+# serviceId as registed with Eureka. Enabled and used when ribbon.eureka.enabled is true.
+            serviceId: FSOFT-SERVICE
+# zuul.routes.<the route>.url used when ribbon.eureka.enabled is false, serviceId is disabled.
+            # url: http://localhost:8600/
+# stripPrefix set to true if context path is set to /
+            stripPrefix: false
+        passenger:
+            path: /passenger/**
+            serviceId: PASSENGER-SERVICE
+            stripPrefix: false
+        trip:
+            path: /trip/**
+            serviceId: TRIP-SERVICE
+            stripPrefix: false
+        grab:
+            path: /grab/**
+            serviceId: GRAB-COMPOSITE
+            stripPrefix: false
+        uber:
+            path: /uber/**
+            serviceId: UBER-COMPOSITE
+            stripPrefix: false

@@ -1,0 +1,30 @@
+'@EnableEurekaClient': ''
+'@SpringBootApplication': ''
+SpringApplication:
+  run(HrServiceApplication:
+    class,: args);
+import:
+- org.springframework.boot.SpringApplication;
+- org.springframework.boot.autoconfigure.SpringBootApplication;
+- org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+package: com.sysmex.hr;
+public:
+- class HrServiceApplication {
+- static void main(String[] args) {
+'}': ''
+
+package com.sysmex.trip;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+public class HrServiceApplication {
+
+  public static void main(String[] args) {
+    SpringApplication.run(HrServiceApplication.class, args);
+  }
+}
+

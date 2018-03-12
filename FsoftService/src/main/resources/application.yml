@@ -1,0 +1,94 @@
+spring:
+  application:
+    name: FSOFT-SERVICE # ==> This is Service-Id
+     
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: info, health, refresh, metrics, hystrix.stream
+      #path-mapping:
+      #  health: healthcheck
+---
+# Items that apply to ALL profiles:   
+eureka:
+  instance:
+    appname: FSOFT-SERVICE  # ==> This is a instance of FSOFT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 6100  
+  
+---
+spring:
+  profiles: fsoft-service-replica01
+eureka:
+  instance:
+    appname: FSOFT-SERVICE  # ==> This is a instance of FSOFT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 6101   
+     
+---
+spring:
+  profiles: fsoft-service-replica02
+eureka:
+  instance:
+    appname: FSOFT-SERVICE  # ==> This is a instance of FSOFT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/  
+server:
+  port: 6102
+  
+---
+spring:
+  profiles: fsoft-service-replica03
+eureka:
+  instance:
+    appname: FSOFT-SERVICE  # ==> This is a instance of FSOFT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/   
+server:
+  port: 6103
+  
+---
+spring:
+  profiles: fsoft-service-replica04
+eureka:
+  instance:
+    appname: FSOFT-SERVICE  # ==> This is a instance of FSOFT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/ 
+server:
+  port: 6104  
+  
+---
+spring:
+  profiles: fsoft-service-replica05
+eureka:
+  instance:
+    appname: FSOFT-SERVICE  # ==> This is a instance of FSOFT-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/   
+server:
+  port: 6105

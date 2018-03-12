@@ -1,0 +1,5 @@
+package com.sysmex.project.model;
+
+public class Project {
+
+}

@@ -1,0 +1,5 @@
+package com.sysmex.fis.controller;
+
+public class FISController {
+
+}

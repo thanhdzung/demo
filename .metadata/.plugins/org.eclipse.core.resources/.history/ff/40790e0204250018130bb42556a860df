@@ -1,0 +1,47 @@
+package com.sysmex.hr.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sysmex.hr.model.Employee;
+import com.sysmex.project.model.Project;
+
+@RestController
+@RefreshScope
+@RequestMapping("/hr")
+public class HRController {
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private Environment environment;
+	
+	@Value("${hr.slogan}")
+	private String slogan;
+	
+	@RequestMapping("")
+	public String getSlogan() {
+		return this.slogan;
+	}
+	
+	@RequestMapping("/getFISEmployee/{id}")
+	public Employee getFISEmployee(@PathVariable int id) {
+		return new Project(id, "FISProject" + id, getActiveProfile());
+	}
+	
+	private String getActiveProfile() {
+		String profile = "";
+		if (environment.getActiveProfiles().length > 0) {
+			profile = environment.getActiveProfiles()[0];
+		}
+		logger.info("Profile Trip:" + profile);
+		return profile;
+	}
+}

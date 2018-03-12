@@ -1,0 +1,94 @@
+spring:
+  application:
+    name: FIS-SERVICE # ==> This is Service-Id
+     
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: info, health, refresh, metrics
+      #path-mapping:
+      #  health: healthcheck
+---
+# Items that apply to ALL profiles:   
+eureka:
+  instance:
+    appname: FIS-SERVICE  # ==> This is a instance of FIS-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 6110  
+  
+---
+spring:
+  profiles: fis-service-replica01
+eureka:
+  instance:
+    appname: FIS-SERVICE  # ==> This is a instance of FIS-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/
+server:
+  port: 6301   
+     
+---
+spring:
+  profiles: fis-service-replica02
+eureka:
+  instance:
+    appname: FIS-SERVICE  # ==> This is a instance of FIS-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/  
+server:
+  port: 6302
+  
+---
+spring:
+  profiles: fis-service-replica03
+eureka:
+  instance:
+    appname: FIS-SERVICE  # ==> This is a instance of FIS-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/   
+server:
+  port: 6303
+  
+---
+spring:
+  profiles: fis-service-replica04
+eureka:
+  instance:
+    appname: FIS-SERVICE  # ==> This is a instance of FIS-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/ 
+server:
+  port: 6304  
+  
+---
+spring:
+  profiles: fis-service-replica05
+eureka:
+  instance:
+    appname: FIS-SERVICE  # ==> This is a instance of FIS-SERVICE
+    #preferIpAddress: true
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:registry1}:${eureka.port:9001}/eureka/   
+server:
+  port: 6305

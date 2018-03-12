@@ -1,0 +1,5 @@
+package com.sysmex.fis.util;
+
+public class SetProcTimeBean {
+
+}

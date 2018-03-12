@@ -1,0 +1,12 @@
+package com.sysmex.turbine;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TurbineStreamApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TurbineStreamApplication.class, args);
+	}
+}

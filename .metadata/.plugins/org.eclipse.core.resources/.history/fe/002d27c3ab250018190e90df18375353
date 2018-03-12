@@ -1,0 +1,5 @@
+package com.sysmex.fsoft.util;
+
+public class SetProcTimeBean {
+
+}

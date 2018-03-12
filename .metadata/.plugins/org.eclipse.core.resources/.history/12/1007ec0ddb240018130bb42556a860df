@@ -1,0 +1,72 @@
+---
+# This default profile is used when running a single instance completely standalone:
+spring:
+  profiles: default
+server:
+  port: 9000  
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/    
+ 
+# registry1, registry2, and registry3 illustrate running 3 intercommunicating instances.  
+# This example has them running side-by-side on localhost
+# -- which is unrealistic in production
+# -- but does illustrate how multiple instances collaborate.
+#
+# Run by opening 3 separate command prompts:
+# java -jar -Dspring.profiles.active=registry1 EurekaServer.jar
+# java -jar -Dspring.profiles.active=registry2 EurekaServer.jar
+# java -jar -Dspring.profiles.active=registry3 EurekaServer.jar
+ 
+---
+spring:
+  profiles: registry1
+  application:
+    name: eureka-server-clustered   # ==> This is Service-Id
+server:
+  port: 9001  
+eureka:
+  instance:
+    hostname: registry1    
+  client:
+    registerWithEureka: true
+    fetchRegistry: true       
+    serviceUrl:
+      defaultZone: http://registry2:9002/eureka/,http://registry3:9003/eureka/
+ 
+---
+spring:
+  profiles: registry2
+  application:
+    name: eureka-server-clustered   # ==> This is Service-Id   
+server:
+  port: 9002
+eureka:
+  instance:
+    hostname: registry2      
+  client:
+    registerWithEureka: true
+    fetchRegistry: true       
+    serviceUrl:
+      defaultZone: http://registry1:9001/eureka/,http://registry3:9003/eureka/
+ 
+---
+spring:
+  profiles: registry3
+  application:
+    name: eureka-server-clustered    # ==> This is Service-Id  
+server:
+  port: 9003
+eureka:
+  instance:
+    hostname: registry3    
+  client:
+    registerWithEureka: true
+    fetchRegistry: true   
+    serviceUrl:
+      defaultZone: http://registry1:9001/eureka/,http://registry2:9002/eureka/   
